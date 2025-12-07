@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caitlin & Karla's Wedding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- 
+    TO ADD YOUR CUSTOM MISTRULY FONT LATER:
+    1. Put your Mistruly.ttf file in the same folder as this index.html
+    2. Uncomment the section below (remove the surrounding symbols)
+    3. Change 'Cormorant Garamond' to 'Mistruly' in the CSS
+    
+    <style>
+        @font-face {
+            font-family: 'Mistruly';
+            src: url('Mistruly.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+    -->
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --off-white: #FFFDFC;
+            --charcoal: #2F2E2E;
+            --slate-blue: #556970;
+            --sage-green: #4C5D4A;
+            --gray-blue: #87979A;
+            --terracotta: #CE8F6A;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--charcoal);
+            background: var(--off-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(47, 46, 46, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--off-white);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--terracotta);
+        }
+
+        /* Hero Section - Full Page Image */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            /* 
+            TO ADD YOUR IMAGE:
+            Put your image file (named hero-image.jpg) in the same folder as this index.html
+            The image will automatically show up!
+            Supported formats: .jpg, .jpeg, .png
+            */
+            background: 
+                linear-gradient(rgba(47, 46, 46, 0.3), rgba(47, 46, 46, 0.3)),
+                url('hero-image.jpg') center/cover no-repeat;
+            /* If your image doesn't load, you'll see this gradient as backup */
+            background-color: var(--sage-green);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1.5s ease-out;
+            text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            /* TO USE MISTRULY: Change above to font-family: 'Mistruly', serif; */
+            font-size: 5rem;
+            font-weight: 300;
+            color: var(--off-white);
+            margin-bottom: 1.5rem;
+            letter-spacing: 8px;
+        }
+
+        .hero .date {
+            font-size: 1.8rem;
+            color: var(--off-white);
+            font-weight: 300;
+            letter-spacing: 4px;
+        }
+
+        /* Countdown Section */
+        .countdown-section {
+            background: var(--off-white);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .countdown {
+            display: flex;
+            gap: 3rem;
+            justify-content: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .countdown-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .countdown-number {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            display: block;
+            line-height: 1;
+        }
+
+        .countdown-label {
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--slate-blue);
+            opacity: 0.8;
+            margin-top: 0.75rem;
+            font-weight: 600;
+        }
+
+        .divider {
+            width: 100px;
+            height: 1px;
+            background: var(--gray-blue);
+            margin: 3rem auto;
+            opacity: 0.5;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+                letter-spacing: 4px;
+            }
+
+            .hero .date {
+                font-size: 1.3rem;
+                letter-spacing: 2px;
+            }
+
+            .countdown {
+                gap: 1.5rem;
+            }
+
+            .countdown-number {
+                font-size: 2.5rem;
+            }
+
+            .countdown-label {
+                font-size: 0.7rem;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+            }
+
+            nav a {
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#welcome">Welcome</a></li>
+            <li><a href="#updates">Updates</a></li>
+            <li><a href="#rsvp">RSVP</a></li>
+            <li><a href="#registry">Registry</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section - Full Page Image -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Caitlin & Karla</h1>
+            <div class="date">September 26, 2026</div>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="countdown-section">
+        <div class="countdown">
+            <div class="countdown-item">
+                <span class="countdown-number" id="days">293</span>
+                <span class="countdown-label">Days</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="hours">00</span>
+                <span class="countdown-label">Hours</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="minutes">00</span>
+                <span class="countdown-label">Minutes</span>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+    </section>
+
+    <!-- 
+    ========================================
+    MORE SECTIONS COMING NEXT!
+    We'll add Welcome, Updates, RSVP, and Registry sections as we build them together
+    ========================================
+    -->
+
+    <!-- JavaScript for Countdown -->
+    <script>
+        // Wedding date: September 26, 2026 at 5:00 PM
+        const weddingDate = new Date('2026-09-26T17:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+
+            if (distance < 0) {
+                document.querySelector('.countdown').innerHTML = '<h2 style="color: var(--charcoal); font-family: Cormorant Garamond, serif; font-weight: 300;">We\'re Married! 🎉</h2>';
+            }
+        }
+
+        // Update countdown immediately and then every minute
+        updateCountdown();
+        setInterval(updateCountdown, 60000); // Updates every 60 seconds (1 minute)
+    </script>
+</body>
+</html>
