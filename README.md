@@ -1,2 +1,0 @@
-# Wedding
-Our wedding site
